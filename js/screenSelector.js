@@ -1,31 +1,58 @@
 // ----- CONTAINER SELECTOR SECTION ------
 function loadContainers() {
-
     titleScreen = new PIXI.Container();
-    mainScreen = new PIXI.Container();
-    endScreen = new PIXI.Container();
+    menuScreen = new PIXI.Container();
+    gameScreen = new PIXI.Container();
+
+    titleScreen.visible = true;
+    menuScreen.visible = false;
+    gameScreen.visible = false;
 
     app.stage.addChild(titleScreen);
-    app.stage.addChild(mainScreen);
-    app.stage.addChild(endScreen);
+    app.stage.addChild(menuScreen);
+    app.stage.addChild(gameScreen);
+
+    populateTitleScreen();
 }
 
-function switchContainer(e) {
-    switch (e.key) {
-        case "1":
-            titleScreen.visible = true;
-            mainScreen.visible = false;
-            endScreen.visible = false;
-            break;
-        case "2":
-            titleScreen.visible = false;
-            mainScreen.visible = true;
-            endScreen.visible = false;
-            break;
-        case "3":
-            titleScreen.visible = false;
-            mainScreen.visible = false;
-            endScreen.visible = true;
-            break;
-    }
+async function populateMenuScreen() {
+    console.log("menu screen yay")
+    titleScreen.visible = false;
+    menuScreen.visible = true;
+    gameScreen.visible = false;
+
+    let redRect = new PIXI.Graphics();
+    redRect.beginFill(0xFF0000);
+    redRect.drawRect(0, 0, app.view.width, app.view.height);
+    menuScreen.addChild(redRect);
+
+    await sleep(5000);
+    populateGameScreen();
+}
+
+function populateGameScreen() {
+    titleScreen.visible = false;
+    menuScreen.visible = false;
+    gameScreen.visible = true;
+
+    let greenRect = new PIXI.Graphics();
+    greenRect.beginFill(0xFF00FF);
+    greenRect.drawRect(0, 0, app.view.width, app.view.height);
+    gameScreen.addChild(greenRect);
+
+    setUp();
+}
+
+async function populateTitleScreen() {
+    titleScreen.visible = true;
+    menuScreen.visible = false;
+    gameScreen.visible = false;
+
+    let blueRect = new PIXI.Graphics();
+    blueRect.beginFill(0xFFFF00);
+    blueRect.drawRect(0, 0, app.view.width, app.view.height);
+    titleScreen.addChild(blueRect);
+
+    await sleep(5000);
+    populateMenuScreen();
 }

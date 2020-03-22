@@ -1,10 +1,10 @@
 function fireBullet(e) {
-    console.log("FIRE");
-
-    let bullet = createBullet();
-    bullets.push(bullet);
-    console.log(bullets);
-
+    if (playerLives > 0) {
+        console.log("FIRE");
+        let bullet = createBullet();
+        bullets.push(bullet);
+        console.log(bullets);
+    }
 }
 
 function createBullet() {
@@ -14,7 +14,7 @@ function createBullet() {
     bullet.x = player.x;
     bullet.y = player.y;
     bullet.speed = bulletSpeed;
-    app.stage.addChild(bullet);
+    gameScreen.addChild(bullet);
 
     return bullet;
 }
@@ -32,7 +32,7 @@ function updateBullets(delta) {
         }
 
         if (bullets[i].dead) {
-            app.stage.removeChild(bullets[i]);
+            gameScreen.removeChild(bullets[i]);
             bullets.splice(i, 1);
             console.log(bullets);
         }
