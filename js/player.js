@@ -28,19 +28,19 @@ function playerMovement() {
 
     // W
     if (keys["87"]) {
-        return player.y -= 5;
+        return player.y -= playerSpeed;
     }
     // S
     if (keys["83"]) {
-        return player.y += 5;
+        return player.y += playerSpeed;
     }
     // A
     if (keys["65"]) {
-        return player.x -= 5;
+        return player.x -= playerSpeed;
     }
     // D
     if (keys["68"]) {
-        return player.x += 5;
+        return player.x += playerSpeed;
     }
 
 }

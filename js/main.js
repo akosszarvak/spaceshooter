@@ -1,7 +1,10 @@
 let app;
+
+// player
 let player;
 let playerLives;
-let state;
+let playerSpeed = 5;
+
 
 // bullets
 let bullets = [];
@@ -28,9 +31,6 @@ let explosions = []
 
 // collision detection lib
 let b = new Bump(PIXI);
-
-// particle system lib
-let d = new Dust(PIXI);
 
 let buttons = [];
 

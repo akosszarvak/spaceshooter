@@ -25,9 +25,10 @@ function buttonSetup() {
         buttons.push(button);
     }
 
-
+    //TODO: multiple button sprites
     function onButtonDown() {}
 
+    //TODO: multiple button sprites
     function onButtonUp() {}
 
     function onClick() {
@@ -57,8 +58,10 @@ function exitButtonSetup() {
     menuScreen.addChild(exitButton);
     buttons.push(exitButton);
 
+    //TODO: multiple button sprites
     function onButtonDown() {}
 
+    //TODO: multiple button sprites
     function onButtonUp() {}
 
     function onClickExit() {

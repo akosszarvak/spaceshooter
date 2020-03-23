@@ -17,6 +17,7 @@ function loadContainers() {
     populateTitleScreen();
 }
 
+// TODO: bg animation
 async function populateMenuScreen() {
 
     console.log("menu screen yay")
@@ -31,8 +32,7 @@ async function populateMenuScreen() {
     buttonSetup();
     exitButtonSetup();
     addLogo();
-    // await sleep(5000);
-    // populateGameScreen();
+
 }
 
 function populateGameScreen() {
@@ -48,6 +48,7 @@ function populateGameScreen() {
     setup();
 }
 
+// TODO: fade into next screen
 async function populateTitleScreen() {
     titleScreen.visible = true;
     menuScreen.visible = false;
@@ -58,7 +59,7 @@ async function populateTitleScreen() {
     blueRect.drawRect(0, 0, app.view.width, app.view.height);
     titleScreen.addChild(blueRect);
 
-    await sleep(5000);
+    await sleep(2000);
     populateMenuScreen();
 }
 

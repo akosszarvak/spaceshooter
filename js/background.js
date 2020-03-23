@@ -14,7 +14,7 @@ function createBg(texture) {
     return tiling;
 }
 
-function updateBg(delta) {
+function updateBg() {
 
     bgX = (bgX - bgSpeed);
     bgFront.tilePosition.x = bgX;

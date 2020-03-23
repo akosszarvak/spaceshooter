@@ -40,7 +40,7 @@ function playExplosion(width, height, ) {
 function destroyExplosion() {
     let timeCheck = Math.round(new Date / 1000);
     for (let i = 0; i < explosions.length; i++) {
-        if ((timeCheck - explosions[i].time) > 2) {
+        if ((timeCheck - explosions[i].time) > 1.3) {
             explosions[i].value.visible = false;
             explosions.splice(i, 1);
             gameScreen.removeChild(explosions[i]);
