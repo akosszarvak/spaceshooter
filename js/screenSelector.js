@@ -1,5 +1,7 @@
 // ----- CONTAINER SELECTOR SECTION ------
 function loadContainers() {
+
+
     titleScreen = new PIXI.Container();
     menuScreen = new PIXI.Container();
     gameScreen = new PIXI.Container();
@@ -16,6 +18,7 @@ function loadContainers() {
 }
 
 async function populateMenuScreen() {
+
     console.log("menu screen yay")
     titleScreen.visible = false;
     menuScreen.visible = true;
@@ -25,9 +28,11 @@ async function populateMenuScreen() {
     redRect.beginFill(0xFF0000);
     redRect.drawRect(0, 0, app.view.width, app.view.height);
     menuScreen.addChild(redRect);
-
-    await sleep(5000);
-    populateGameScreen();
+    buttonSetup();
+    exitButtonSetup();
+    addLogo();
+    // await sleep(5000);
+    // populateGameScreen();
 }
 
 function populateGameScreen() {
@@ -40,7 +45,7 @@ function populateGameScreen() {
     greenRect.drawRect(0, 0, app.view.width, app.view.height);
     gameScreen.addChild(greenRect);
 
-    setUp();
+    setup();
 }
 
 async function populateTitleScreen() {
@@ -55,4 +60,15 @@ async function populateTitleScreen() {
 
     await sleep(5000);
     populateMenuScreen();
+}
+
+function addLogo() {
+    let logo = new PIXI.Sprite.from("images/logo.png");
+
+    logo.anchor.set(0.5);
+    logo.x = 400;
+    logo.y = 90;
+    logo.height = 150;
+    logo.width = 150;
+    menuScreen.addChild(logo);
 }

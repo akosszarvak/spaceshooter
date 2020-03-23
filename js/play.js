@@ -1,4 +1,4 @@
-function setUp() {
+function setup() {
     initLevel();
     createExplosionSheet();
     playerLives = 1;

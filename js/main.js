@@ -32,6 +32,8 @@ let b = new Bump(PIXI);
 // particle system lib
 let d = new Dust(PIXI);
 
+let buttons = [];
+
 //containers
 let titleScreen;
 let menuScreen;
@@ -51,9 +53,16 @@ window.onload = function () {
     app.loader.add("explosion", "images/fire.png")
         .add("bgBack", "images/galaxy.png")
         .add("bgMiddle", "images/stars1.png")
-        .add("bgFront", "images/stars2.png");
+        .add("bgFront", "images/stars2.png")
+        .add("logo", "images/logo.png")
+        .add("game1Button", "images/GAME1.png")
+        .add("game2Button", "images/GAME2.png")
+        .add("game3Button", "images/GAME3.png")
+        .add("exitButton", "images/EXIT.png");
     app.loader.load();
-    // app.loader.onLoad(initLevel());
+
+
+
 
 
     loadContainers();
@@ -63,7 +72,6 @@ window.onload = function () {
 
 
 function gameLoop(delta) {
-
 
     playerMovement();
     updateBullets(delta);

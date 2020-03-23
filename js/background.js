@@ -16,7 +16,7 @@ function createBg(texture) {
 
 function updateBg(delta) {
 
-    bgX = (bgX + bgSpeed);
+    bgX = (bgX - bgSpeed);
     bgFront.tilePosition.x = bgX;
     bgMiddle.tilePosition.x = bgX / 2;
     bgBack.tilePosition.x = bgX / 4;
